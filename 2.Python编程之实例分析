@@ -1,5 +1,6 @@
 第一周的课讲了计算机的基本概念，并未提到python实际知识，所以跳过了。
-基本概念
+
+#2.1 Python语法元素入门
 注释：可对程序进行解释和标记，不影响程序编写
 单行注释：#
 多行注释："""tbody"""
@@ -17,7 +18,7 @@ a[-1]的内容就是'l'
 a[0]的内容就是'V'
 
 分支语句：
-if语句
+if elif else语句
 
 判断：
 in：左边变量是否在右边变量内
@@ -32,3 +33,25 @@ value不仅仅可以是内容也可以是表达式
 print()：显示括号内元素
 a, b = value1, value2
 print("%.2f, %.2f"%a%b)以精确到小数点后两位的float类型显示a和b（注意数据类型要对应）
+
+
+#2.2蟒蛇绘制程序
+import turtle
+
+def drawSnake(rad, angle, len, neckrad):
+  for i in range(len):
+    turtle.circle(rad, angle)
+    turtle.circle(-rad, angle)
+  turtle.circle(rad, angle/2)
+  turtle.fd(rad)
+  turtle.circle(neckrad+1, 180)
+  turtle.fd(rad*2/3)
+def main():
+  turtle.setup(1300, 800, 0, 0)
+  pythonsize = 30
+  turtle.pensize(pythonsize)
+  turtle.pencolor("blue")
+  turtle.seth(-40)
+  drawSnake(40, 80, 5, pythonsize/2)
+
+main()
